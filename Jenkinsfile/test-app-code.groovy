@@ -4,6 +4,7 @@ pipeline {
         stage ("GIT Clone") {
             steps {
                 checkout scm
+                sh "rm -rf .git"
                 echo 'The code has been cloned'
             }
         }
