@@ -9,7 +9,7 @@ pipeline {
         }
         stage ("Deployment") {
             steps {
-                sh "cp /var/lib/jenkins/workspace/${JOB_NAME}/index.html /var/www/html"
+                sh "sudo cp /var/lib/jenkins/workspace/${JOB_NAME}/index.html /var/www/html"
             }
         }
     }
