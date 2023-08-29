@@ -14,4 +14,12 @@ pipeline {
             }
         }
     }
+      post{
+        success{
+            echo 'The dev env build is success'
+        }
+        failure{
+            echo 'The dev env build is failed'
+        }
+    }
 }
