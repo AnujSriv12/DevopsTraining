@@ -1,5 +1,5 @@
 pipeline {
-    agent {label "anuj-test-app"}
+    agent any
     stages{
         stage ("GIT Clone") {
             steps {
