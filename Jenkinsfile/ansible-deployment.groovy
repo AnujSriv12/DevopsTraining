@@ -12,7 +12,9 @@ pipeline {
         }
         stage ('Deploy') {
             steps {
+                sh '''
                 sudo -u ansible ansible-playbook -i ${inventorypath} ${playbookpath} -vvv
+                '''
             }
         }
     }
