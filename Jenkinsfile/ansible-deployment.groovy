@@ -3,7 +3,6 @@ pipeline {
     environment {
         inventorypath = "/var/lib/jenkins/workspace/${JOB_NAME}/inventory.ini"
         playbookpath  = "/var/lib/jenkins/workspace/${JOB_NAME}/deployment.yml"
-
     }
     stages {
         stage ('checkout') {
@@ -13,7 +12,7 @@ pipeline {
         }
         stage ('Deploy') {
             steps {
-                sudo -u ansible ansible-playbook -i  ${inventorypath} ${playbookpath} -vvv
+                sudo -u ansible ansible-playbook -i ${inventorypath} ${playbookpath} -vvv
             }
         }
     }
