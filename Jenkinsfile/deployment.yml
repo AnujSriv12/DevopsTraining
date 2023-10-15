@@ -1,0 +1,22 @@
+---
+- hosts: mnp-qa-app
+  user: ansible
+  become: true
+  gather_facts: yes
+  tasks:
+    - name: Git checkout
+      ansible.builtin.git:
+       repo: 'https://github.com/AnujSriv12/DevopsTraining.git'
+       dest: /home/ansible/anuj/
+    - name: install httpd
+      yum: pkg=httpd state=installed
+    - name: start httpd
+      service: name=httpd state=started
+    - name: Deploy.
+      ansible.builtin.copy:
+        src: /home/ansible/anuj/index.html
+        dest: /var/www/html/
+        owner: ansible
+        group: ansible
+        mode: '0777'
+        remote_src: yes
