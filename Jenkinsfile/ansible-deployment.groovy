@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        inventorypath = "/var/lib/jenkins/workspace/${JOB_NAME}/inventory.ini"
-        playbookpath  = "/var/lib/jenkins/workspace/${JOB_NAME}/deployment.yml"
+        inventorypath = "/var/lib/jenkins/workspace/${JOB_NAME}/Jenkinsfile/inventory.ini"
+        playbookpath  = "/var/lib/jenkins/workspace/${JOB_NAME}/Jenkinsfile/deployment.yml"
     }
     stages {
         stage ('checkout') {
